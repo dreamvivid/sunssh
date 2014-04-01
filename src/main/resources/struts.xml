@@ -7,11 +7,12 @@
 
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
     <constant name="struts.devMode" value="true" />
+    <constant name="struts.objectFactory" value="spring" />
 
     <package name="test" namespace="/test" extends="struts-default">
         <default-action-ref name="index" />
         <global-results>
-            <result name="error">/error.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
         </global-results>
         <global-exception-mappings>
             <exception-mapping exception="java.lang.Exception" result="error"/>
