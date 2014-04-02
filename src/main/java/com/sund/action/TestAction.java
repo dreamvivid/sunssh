@@ -1,11 +1,8 @@
 package com.sund.action;
 
 import javax.annotation.Resource;
-
 import org.apache.log4j.Logger;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-
 import com.opensymphony.xwork2.ActionSupport;
 import com.sund.common.CommonService;
 import com.sund.service.ITestService;
@@ -75,6 +72,26 @@ public class TestAction extends ActionSupport {
 			return SUCCESS;
 	}
 
+	/**
+	 * 		测试只读事务控制
+	 * @return
+	 * @throws Exception
+	 */
+	public String testGetTx() throws Exception {
+			testService.getTestTx();
+			return SUCCESS;
+	}
+	
+	/**
+	 * 		测试读写事务控制
+	 * @return
+	 * @throws Exception
+	 */
+	public String testInsertTx() throws Exception {
+			testService.insertTestTx();
+			return SUCCESS;
+	}
+	
 	public ITestService getTestService() {
 		return testService;
 	}
