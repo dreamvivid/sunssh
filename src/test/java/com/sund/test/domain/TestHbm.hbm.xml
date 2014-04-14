@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.sund.test.domain">
+	<class name="TestHbm" table="TEST_HBM" lazy="true" batch-size="50">
+		<id name="id" column="ID">
+			<generator class="sequence"></generator>
+		</id>
+		<property name="name" column="NAME"></property>
+		<property name="date" column="UPDATE_TIME" type="timestamp"></property>
+	</class>
+	<query name="test.testHbm.xml">
+		from TestHbm hbm where hbm.name = :name
+	</query>
+</hibernate-mapping>
